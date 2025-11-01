@@ -6,41 +6,40 @@ num1 = int(input("Введи перше число: "))
 num2 = int(input("Введи друге число: "))
 operation = input("Введи операцію (+, -, *, /, **): ")
 
-if operation == "+":
+if operation == '+':
     result = num1 + num2
-elif operation == "-":
+elif operation == '-':
     result = num1 - num2
-elif operation == "*":
+elif operation == '*':
     result = num1 * num2
-elif operation == "/":
+elif operation == '/':
     result = num1 / num2
+elif operation == '**':
+    result = num1 ** num2
 else:
     result = "Невідома операція"
-
-print(f"Результат: {result}")
-
 while True:
-    again = input("Бажаєш виконати ще одну операцію? (так/ні): ").lower()
-    if again == "так":
+    print("Бажаєш виконати ще одну операцію?")
+    again = input("Введи 'так' для продовження або 'ні' для виходу: ").lower()
+    if again == 'так':
         num1 = int(input("Введи перше число: "))
         num2 = int(input("Введи друге число: "))
         operation = input("Введи операцію (+, -, *, /, **): ")
 
-        if operation == "+":
+        if operation == '+':
             result = num1 + num2
-        elif operation == "-":
+        elif operation == '-':
             result = num1 - num2
-        elif operation == "*":
+        elif operation == '*':
             result = num1 * num2
-        elif operation == "/":
+        elif operation == '/':
             result = num1 / num2
+        elif operation == '**':
+            result = num1 ** num2
         else:
             result = "Невідома операція"
-
-        print(f"Результат: {result}")
-    elif again == "ні":
-        print(f"До побачення, {name}!")
+    elif again == 'ні':
         break
-    else:
-        print("Будь ласка, відповідай 'так' або 'ні'.")
+print(f"Результат: {result}")
+print("Дякую, що скористався моїм калькулятором, до побачення!")
 
