@@ -10,7 +10,7 @@ def square(a, b):
     return a ** b
 def invalid_operation():    
     result = "Невідома операція"
-    
+    return print("неправильна операція")
 
 from unittest import result
 
