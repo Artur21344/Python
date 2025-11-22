@@ -13,12 +13,12 @@ def invalid_operation():
     return print("неправильна операція")
 
 from unittest import result
+print("Вітаю в калькуляторі!")
+name = input("Як тебе звати? ")
+print(f"Радий познайомитись, {name}!")
+print('мій калькулятор допоможе тобі з простими обчисленнями')
 
 while True:
-    print("Вітаю в калькуляторі!")
-    name = input("Як тебе звати? ")
-    print(f"Радий познайомитись, {name}!")
-    print('мій калькулятор допоможе тобі з простими обчисленнями')
     num1 = int(input("Введи перше число: "))
     while True:
         if num1 >= 0:
@@ -52,6 +52,9 @@ while True:
     answer = input("Хочеш зробити ще одне обчислення? (так/ні): ")
     if answer == 'так':
         continue
-    else:
+    elif answer != 'так' and answer != 'ні':
+        print("операція невірна")
+    elif answer == 'ні':
         print("До побачення!")
     break
+      
