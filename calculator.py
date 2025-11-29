@@ -1,16 +1,15 @@
 def plus(a, b):
-    return a + b
+    addit = lambda a, b: a + b
 def minus(a, b):
-    return a - b
+    subtr = lambda a, b: a - b
 def multiply(a, b):
-    return a * b
+    mult = lambda a, b: a * b
 def divide (a, b):
-    return a / b
+    div = lambda a, b: a / b
 def square(a, b):
-    return a ** b
-def invalid_operation():    
-    result = "Невідома операція"
-    return print("неправильна операція")
+    sqr = lambda a, b: a ** b
+def invalid_operation():
+    return lambda a, b: "неправильна операція"
 
 from unittest import result
 print("Вітаю в калькуляторі!")
