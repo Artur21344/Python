@@ -1,20 +1,10 @@
-def plus(a, b):
-    addit = lambda a, b: a + b
-    return addit(a, b)
-def minus(a, b):
-    subtr = lambda a, b: a - b
-    return subtr(a, b)
-def multiply(a, b):
-    mult = lambda a, b: a * b
-    return mult(a, b)
-def divide (a, b):
-    div = lambda a, b: a / b
-    return div(a, b)
-def square(a, b):
-    sqr = lambda a, b: a ** b
-    return sqr(a, b)
+add = lambda a, b: a + b
+sub = lambda a, b: a - b
+mul = lambda a, b: a * b
+div = lambda a, b: a / b
+sqrt = lambda a, b: a ** b
 def invalid_operation():
-    return lambda a, b: "неправильна операція"
+    return lambda: "Операція невірна"
 from unittest import result
 print("Вітаю в калькуляторі!")
 name = input("Як тебе звати? ")
@@ -39,15 +29,15 @@ while True:
     operation = input("Введи операцію (+, -, *, /, **): ")
     print("Результат: ")
     if operation == '+':
-        print(plus(num1, num2))
+        print(add(num1, num2))
     elif operation == '-':
-        print(minus(num1, num2))
+        print(sub(num1, num2))
     elif operation == '*':
-        print(multiply(num1, num2))
+        print(mul(num1, num2))
     elif operation == '/':
-        print(divide(num1, num2))
+        print(div(num1, num2))
     elif operation == '**':
-        print(square(num1, num2))
+        print(sqrt(num1, num2))
     else:
         print(invalid_operation())
     print("Дякую, що скористався моїм калькулятором, до побачення!")
