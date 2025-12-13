@@ -1,8 +1,22 @@
-add = lambda a, b: a + b
-sub = lambda a, b: a - b
-mul = lambda a, b: a * b
-div = lambda a, b: a / b
-sqrt = lambda a, b: a ** b
+def calculator_decorator(func):
+    def wrapper(a, b):
+        return func(a, b)
+    return wrapper
+@calculator_decorator
+def add(a, b):
+    return a + b
+@calculator_decorator
+def sub(a, b):
+    return a - b
+@calculator_decorator
+def mul(a, b):
+    return a * b
+@calculator_decorator
+def div(a, b):
+    return a / b
+@calculator_decorator
+def sqrt(a, b):
+    return a**b
 def invalid_operation():
     return lambda: "Операція невірна"
 from unittest import result
@@ -36,6 +50,8 @@ while True:
         print(mul(num1, num2))
     elif operation == '/':
         print(div(num1, num2))
+        if num2 == 0:
+            print("Ділення на нуль неможливе.")
     elif operation == '**':
         print(sqrt(num1, num2))
     else:
@@ -50,4 +66,4 @@ while True:
     elif answer == 'ні':
         print("До побачення!")
     break
-      
+
