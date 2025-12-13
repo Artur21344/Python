@@ -1,30 +1,46 @@
 class Bank:
     def __init__(self, name, balance):
         self.name = name
-        self.balance = balance
-
+        self.__balance = balance   
+    @property
+    def balance(self):
+        return self.__balance
+    
+    @balance.setter
+    def balance(self, value):
+        if value < 0:
+            print("Баланс не може бути від'ємним")
+            return
+        self.__balance = value
+    
     def deposit(self, amount):
-        self.balance += amount
-        return self.balance
-
+        if amount <= 0:
+            print("Сума для внесення має бути більшою за 0")
+            return self.__balance
+        self.__balance += amount
+        return self.__balance
+    
     def withdraw(self, amount):
-        if amount > self.balance:
+        if amount <= 0:
+            print("Сума для зняття має бути більшою за 0")
+            return self.__balance
+        if amount > self.__balance:
             print("Недостатньо коштів")
-        self.balance -= amount
-        return self.balance
-        
+            return self.__balance
+        self.__balance -= amount
+        return self.__balance
+    
     def display_info(self):
-        print(f"Ім'я: {self.name}, Баланс: {self.balance}")
+        return f"Ім'я: {self.name}, Баланс: {self.__balance}"
+
 
 Artur = Bank("Artur", 1000)
-Artur.display_info()
+print(Artur.display_info())
 
-withdraw = input("Введи суму для зняття: ")
-Artur.withdraw(int(withdraw))
-if int(withdraw) <= Artur.balance:
-    print(f"Новий баланс після зняття: {Artur.balance}")
+withdraw = int(input("Введи суму для зняття: "))
+Artur.withdraw(withdraw)
+print(f"Новий баланс після зняття: {Artur.balance}")
 
-
-deposit = input("Введи суму для внесення: ")
-Artur.deposit(int(deposit))
+deposit = int(input("Введи суму для внесення: "))
+Artur.deposit(deposit)
 print(f"Новий баланс після внесення: {Artur.balance}")
