@@ -1,0 +1,13 @@
+print("Hello, this app will help you plan your travel!")
+destination = input("Please enter where would you like to go:")
+dest = input("how much km is it to your destination?")
+speed = input("at what speed in km/h will you be traveling?")
+price_for_liter = input("what is the price of fuel per liter?")
+fuel_consumption = input("what is your vehicle's fuel consumption in liters per 100 km?")
+time = round(int(dest) / int(speed), 2)
+fuel_needed = (int(dest) / 100) * int(fuel_consumption)
+def total_cost(fuel_needed, price_for_liter):
+    return fuel_needed * int(price_for_liter)
+total_cost = total_cost(fuel_needed, price_for_liter)
+print(f"To travel to {destination}, it will take you {time:} hours and cost you {total_cost:} UAH.")
+print("Thank you for using my app, have a nice trip!")
