@@ -1,23 +1,23 @@
 class User:
     def __init__(self,name):
         self.name = name
+    
+    def hello(self):
+        return f"Hello, {self.name}!"
+    
+    def get_role(self):
+        return "User"
 
 class Admin(User):
-    def main(self):
-        return f"Admin: {self.name}"
-def password_do(admin):
-    return f"Admin {admin.name} changed password."
-def block_user(user):
-    return f"User {user.name} has been blocked."
+    def get_role(self):
+        return "Admin"
 
-def hello_user(user):
-    return f"Hello i am {user.__class__.__name__} my name is {user.name}"
+
 
 admin1 = Admin("Artur")
-print(admin1.main())
+print(admin1.hello())
+print(admin1.get_role())
 
 User1 = User("Bob")
-print(hello_user(User1))
-
-print(Admin("Artur").main())
-print(hello_user(admin1))
+print(User1.hello())
+print(User1.get_role())
