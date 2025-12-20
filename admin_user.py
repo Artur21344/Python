@@ -3,16 +3,13 @@ class User:
         self.name = name
     def get_role(self):
         return "User"
+    def hello(self):
+        return f"Hello, I am {self.name} and my role is {self.get_role()}"
 
 class Admin(User):
     def get_role(self):
         return "Admin"
 
-def hello(self):
-    return f"Hello, I am {self.name} my role {self.get_role()}"
-
-User.hello = hello
-Admin.hello = hello
 
 user1 = User("Bob")
 admin1 = Admin("Artur") 
