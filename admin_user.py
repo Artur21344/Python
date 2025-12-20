@@ -1,25 +1,21 @@
 class User:
-    def __init__(self,name, class_name = "User"):
+    def __init__(self,name):
         self.name = name
-        self.class_name = class_name
-
-    def hello(self):
-        return f"Hello, I am {self.name} i am {self.class_name}"
-
+    def get_role(self):
+        return "User"
 
 class Admin(User):
-    def __init__(self, name):
-        super().__init__(name, class_name="Admin")
-        
     def get_role(self):
         return "Admin"
 
+def hello(self):
+    return f"Hello, I am {self.name} my role {self.get_role()}"
 
+User.hello = hello
+Admin.hello = hello
 
-admin1 = Admin("Artur")
+user1 = User("Bob")
+admin1 = Admin("Artur") 
+
+print(user1.hello())
 print(admin1.hello())
-print(admin1.get_role())
-
-User1 = User("Bob")
-print(User1.hello())
-print(User1.class_name)
