@@ -5,9 +5,9 @@ class Product:
         self.name = name
         self.price = price
 
-    @staticmethod
-    def price_with_tax(price):
-        return price + price * Product.tax_procent / 100
+    @classmethod
+    def price_with_tax(cls, price):
+        return price + price * cls.tax_procent / 100
 
     def __str__(self):
         return f"Товар: {self.name}, ціна: {self.price}"
