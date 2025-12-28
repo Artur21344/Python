@@ -44,3 +44,5 @@ print(f"Новий баланс після зняття: {Artur.balance}")
 deposit = int(input("Введи суму для внесення: "))
 Artur.deposit(deposit)
 print(f"Новий баланс після внесення: {Artur.balance}")
+
+print("Депозит неможно виводити через дорівнює")
