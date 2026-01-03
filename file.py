@@ -13,10 +13,12 @@ def upload_file(filename):
     print("Файл успішно завантажено")
 
 
-try:
-    file_name = input("Введіть назву файлу: ")
-    upload_file(file_name)
-except ValueError as неправильне_значення:
-    print(неправильне_значення)
-except InvalidFileTypeError as неправильний_тип_файлу:
-    print(неправильний_тип_файлу)
+while True:
+    try:
+        file_name = input("Введіть назву файлу: ")
+        upload_file(file_name)
+        break
+    except ValueError as invalid_value:
+        print(invalid_value)
+    except InvalidFileTypeError as invalid_file_type:
+        print(invalid_file_type)
