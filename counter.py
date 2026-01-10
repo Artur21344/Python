@@ -8,7 +8,7 @@ def reverse_with_loop(text):
 
 def reverse_with_slice(text):
     """Виводить оригінальний рядок за допомогою зрізу"""
-    return text[::]
+    return text[::-1]
 
 
 user_input = input("Введіть рядок: ")
