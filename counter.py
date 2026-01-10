@@ -20,3 +20,7 @@ result_slice = reverse_with_slice(user_input)
 print("\n--- Результати ---")
 print(f"Перевернутий (цикл): {result_loop}")
 print(f"Оригінальний: {result_slice}")
+
+print("\n--- Перевірка на паліндром ---")
+is_palindrome = user_input == result_loop
+print(f"Паліндром: {is_palindrome}")
