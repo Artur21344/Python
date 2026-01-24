@@ -35,7 +35,7 @@ total_expense = sum(expenses)
 print("Мінімальна витрата:", min_expense)
 print("Максимальна витрата:", max_expense)
 print("Загальна сума витрат:", total_expense)
-filtered_expenses = [expense for expense in expenses if expense > 100]
-print("Витрати більші за 100:", filtered_expenses)
-sumed_expenses = [int(expense * 1.1) for expense in expenses]
+more100_expenses = list(filter(lambda x: x > 100, expenses)) 
+print("Витрати більші за 100:", more100_expenses)
+sumed_expenses = list(map(lambda x: int(x * 1.1), expenses))
 print("Витрати збільшені на 10%:", sumed_expenses)
